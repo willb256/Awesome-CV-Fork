@@ -1,0 +1,176 @@
+Resume Tips:
+-Use English-sounding names to get more callbacks/interviews. This happened because of a well-documented/researched phenomenon called name discrimination/bias. 
+
+-Avoid using color/low-contrast color as much as possible to increase readability/avoid bias. Though a color or two is probably fine.
+
+-According to this study, https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.2026. Adding middle initial to name makes you seem more intelligent. 
+
+-Name file FirstName_LastName_Resume.pdf (or FirstName_MiddleInitial_LastName_Resume.pdf) to make it easier for employers to distinguish your resume. 
+
+-Underscore in FirstName_LastName_Resume.pdf instead of space helps prevent incompatibility processing the file. 
+
+
+
+Change Log: 
+Use CTRL + F to find exact code in file
+
+
+
+-Changed section color to blue (145a7d)
+File: resume.tex
+---------------------
+Code: Changed hex color.
+\definecolor{awesome}{HTML}{145a7d} 
+
+
+
+-Changed section color to fully covered instead of partially covered
+File: resume.tex
+---------------------
+Code: Added new code. 
+\makeatletter
+\def\@sectioncolor{\color{awesome}}
+\makeatother
+
+
+
+-Changed darktext, graytext, lightext, and text to fully black (000000) to make it easier to read
+File: resume.tex
+---------------------
+Code: Changed code.
+% Text types are in order except lighttext
+ \definecolor{darktext}{HTML}{000000}
+ \definecolor{graytext}{HTML}{000000}
+ \definecolor{text}{HTML}{000000}
+% Lighttext is for the address
+ \definecolor{lighttext}{HTML}{000000} 
+
+
+ 
+-Added link to footer
+File: resume.tex
+---------------------
+Code: Added new code. 
+\usepackage{hyperref}
+---------------------
+Code: Changed code.
+\makecvfooter
+ {\today}
+ {\href{https://www.overleaf.com/read/dmpwdjzqddwd}{Awesome CV~~~·~~~Resume}}
+ {\thepage}
+
+
+
+-Changed font styles from slanted, italics, and small capitals to regular 
+File: awesome-cv.cls
+---------------------
+Code: Removed all \slshape, \itshape, and \scshape from code. 
+
+
+
+-Added ability to make bulleted columns
+File: resume.tex
+---------------------
+Code: Added code
+\usepackage{multicol}
+---------------------
+Code: Code template for making bulleted columns
+  \cvdescription % Doesn't necessarily have to use /cvdescription
+    {} % Job title
+    {} % Organization
+    {} % Location
+    {} % Date(s)
+    {
+    \begin{cvitems} % Descriptions
+        \vspace*{-4.0mm} % Move text vertically up 4.0mm
+        \begin{multicols}{2} % Create two columns
+        % \addtolength{\itemindent}{0.0cm} indent before the bullet
+        % \item \hspace {} indent after the bullet
+        \item Artificial Intelligence
+        \item Data Structures and Algorithms
+        \item Linear Algebra
+        \item Discrete Math
+        \item Computer Organization and Systems
+        \item Circuit and Electronics
+        \item Introduction to Machine Learning
+        \item Design and Analysis of Algorithms
+        \item Introduction to Operating Systems
+        \item Principles of Computer Systems
+        \end{multicols}
+    \end{cvitems}
+    }
+
+
+
+-Removed , after \honorpositionstyle{#1} from /cvhonor 
+File: awesome-cv.cls
+---------------------
+Code: Changed code
+  \honordatestyle{#4} & \honorpositionstyle{#1} \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+}
+
+
+
+-Changed margin
+File: resume.tex
+---------------------
+Code: Commented on code.
+%\vspace*{-4mm}
+%\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+---------------------
+Code: Added code.
+\geometry{left=0.8in, top=0.5in, right=0.8in, bottom=1in, footskip =.5in} 
+
+
+
+-Added package
+File: resume.tex
+---------------------
+Code: Added code
+\usepackage{comment}
+---------------------
+Code: Template code
+\begin{comment} % Create multi-line comment. End comment with \end{comment}
+
+
+
+-Added another method for creating columns. Not necessary.
+File: resume.tex
+---------------------
+Code: Added code
+\usepackage{tasks}
+---------------------
+Code: Code template
+\begin{document}
+    \begin{tasks}(9)
+      \task 1
+      \task 2
+      \task 3
+      \task 4
+    \end{tasks}
+\end{document}
+
+
+
+-Added new command called \cvdescription
+File: awesome-cv.cls
+---------------------
+Coded: Changed code. 
+% Define an entry of cv information (modified to not include organization, title, location, and date)
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
+\newcommand*{\cvdescription}[5]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    %\ifempty{#2#3}
+      %{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      %{\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      %\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+}
+
+
+
+-Added comments / code documentation

@@ -1,0 +1,166 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+%%==================================================================%%
+%%==================================================================%%
+%%                                                                  %%
+%%        THIS IS MY MODIFIED PERSONAL TEMPLATE INTENDED FOR        %%
+%%                SHARING AND EDUCATIONAL PURPOSES                  %%
+%%                                                                  %%
+%%                  OPEN THE ORIGINAL TEMPLATE AT                   %%
+%%                                                                  %%
+%% https://www.overleaf.com/latex/templates/awesome-cv/dfnvtnhzhhbm %%
+%%                                                                  %%
+%%==================================================================%%
+%%==================================================================%%
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+\usepackage{multicol} % This is to make multi columns section.
+
+\usepackage{tasks} % This is also to make multi columns section. Not necessary.
+
+\usepackage{hyperref} % This is to embed hyperlinks.
+
+\usepackage{comment} % This is to make multi line comments
+
+
+% Configure page margins with geometry
+\geometry{left=0.8in, top=0.5in, right=0.8in, bottom=1in, footskip =.5in} 
+% (Left Margin+ Right Margin) / (Top Margin + Bottom Margin) = (0.8 + 0.8) / (0.5 + 0.5) = 1.6
+% 1.6 is approximately the golden ratio
+
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange, awesome-nephritis, awesome-concrete, awesome-darknight
+% Uncomment on \colorlet (by removing the % sign) if you would like to use Awesome Colors
+%\colorlet{awesome}{awesome-skyblue}
+
+% Probably don't use color due to HR discrimination
+% On second thought, I like color better
+% Change Hex Code inside the third bracket if you would like to use another color
+\definecolor{awesome}{HTML}{145a7d} 
+% A nice blue color that I like is 145a7d
+% No color or completely back color is 000000
+
+% Colors for text
+% Text types are in order except lighttext
+\definecolor{darktext}{HTML}{000000}
+\definecolor{text}{HTML}{000000}
+\definecolor{graytext}{HTML}{000000}
+% Lightext is for the personal address 
+\definecolor{lighttext}{HTML}{000000}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[rectangle,edge,right]{./examples/profile}
+%\vspace*{-4mm}
+\name{}{Byungjin Park}
+\position{Software Architect{\enskip\cdotp\enskip}Security Expert}
+\address{42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA}
+
+\mobile{(+82) 10-9030-1843}
+\email{posquit0.bj@gmail.com}
+\homepage{www.posquit0.com}
+\github{posquit0}
+\linkedin{posquit0}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+%\quote{``Be the change that you want to see in the world."}
+
+% Completely cover the cv section with color instead of partially cover
+\makeatletter
+\def\@sectioncolor{\color{awesome}}
+\makeatother
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+
+% Please keep the footer in order to share the template
+
+\makecvfooter
+  {\today}
+  {\href{https://www.overleaf.com/read/dmpwdjzqddwd}{Awesome CV~~~·~~~Resume}}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%   or create a new file by right-clicking resume folder and add new file
+%   then add \input{file_name} to the code underneath
+%-------------------------------------------------------------------------------
+
+% To remove each section comment on it (by adding % sign before the \input)
+
+% Summary is usually not needed for resume
+%\input{resume/summary.tex}
+
+\input{resume/experience.tex}
+\input{resume/honors.tex}
+\input{resume/presentation.tex}
+\input{resume/writing.tex}
+\input{resume/committees.tex}
+\input{resume/education.tex}
+\input{resume/relevant coursework}
+\input{resume/extracurricular.tex}
+
+
+%-------------------------------------------------------------------------------
+\end{document}
+
+%==================================================================%
+%==================================================================%
+%                                                                  %
+%                  OPEN THE ORIGINAL TEMPLATE AT                   %
+%                                                                  %
+% https://www.overleaf.com/latex/templates/awesome-cv/dfnvtnhzhhbm %
+%                                                                  %
+%==================================================================%
+%==================================================================%
