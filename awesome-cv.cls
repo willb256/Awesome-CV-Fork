@@ -588,7 +588,7 @@
 }
 
 % Define an environment for cventry
-\newenvironment{cventries}{%
+\newenvironment{cventries}{%z
   \vspace{\acvSectionContentTopSkip}
   \begin{center}
 }{%
@@ -638,10 +638,12 @@
   \vspace{\acvSectionContentTopSkip}
   \vspace{-2mm}
   \begin{center}
+    \setlength{\parskip}{4pt}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
 }{%
+    \setlength{\parskip}{4pt}
     \end{tabular*}
   \end{center}
 }
@@ -672,16 +674,19 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
+  \setlength{\parskip}{4pt} % Space between lines
   \vspace{-4.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
-    \setlength{\parskip}{0pt}
+    \setlength{\parskip}{4pt}
     %\setlength{\parindent}{0pt}
     \renewcommand{\labelitemi}{\bullet}
+
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  \vspace{-2.0mm}
+
 }
 
 
