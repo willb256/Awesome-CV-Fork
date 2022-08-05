@@ -30,6 +30,6 @@ Instruction:
 8. Press recompile on the right side
 
 
-Disclaimer: The person in this resume is not me. But, rather, the creator of the original template. 
-![resume v7](https://user-images.githubusercontent.com/59489624/182475952-f177980f-3d7b-45d9-91fd-2943c782489f.png)
-![resume v8](https://user-images.githubusercontent.com/59489624/182475965-044f0fac-96eb-4403-a2f6-2c064584d0ec.png)
+Disclaimer: The person in this resume is not me. 
+![resume v9](https://user-images.githubusercontent.com/59489624/183141729-2d99302e-5fe7-4a8c-80b4-3bd0384c4841.png)
+![resume v10](https://user-images.githubusercontent.com/59489624/183141734-362a6f32-17a6-427c-ae34-5d2c07759029.png)
