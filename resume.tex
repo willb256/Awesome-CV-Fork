@@ -30,7 +30,10 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+% In the U.S and Canada, Letter Size paper (8.5 in x 11 in) is standard. While the rest of the world, A4 paper (210 mm x 297 mm) is standard,
+% Command underneath pt sizes are 10, 11, and 12, Other ones don't work.
+%\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[12pt, letterpaper]{awesome-cv} 
 
 \usepackage{multicol} % This is to make multi columns section.
 
@@ -39,6 +42,8 @@
 \usepackage{hyperref} % This is to embed hyperlinks.
 
 \usepackage{comment} % This is to make multi line comments
+
+\usepackage{fontawesome5} % This is to change to using fontawesome5 package
 
 
 % Configure page margins with geometry
@@ -91,6 +96,7 @@
 \mobile{(+82) 10-9030-1843}
 \email{posquit0.bj@gmail.com}
 \homepage{www.posquit0.com}
+%\addresstwo{address}
 \github{posquit0}
 \linkedin{posquit0}
 % \gitlab{gitlab-id}
@@ -100,9 +106,12 @@
 % \reddit{reddit-id}
 % \medium{madium-id}
 % \googlescholar{googlescholar-id}{name-to-display}
+%\citizenship{citizenship}
+
 %% \firstname and \lastname will be used
 % \googlescholar{googlescholar-id}{}
 % \extrainfo{extra informations}
+% \extrainfotwo{second extra information}
 
 %\quote{``Be the change that you want to see in the world."}
 
@@ -144,8 +153,9 @@
 
 \input{resume/experience.tex}
 \input{resume/honors.tex}
-\input{resume/presentation.tex}
-\input{resume/writing.tex}
+% Commented two lines below because there's not enough space
+%\input{resume/presentation.tex}
+%\input{resume/writing.tex}
 \input{resume/committees.tex}
 \input{resume/education.tex}
 \input{resume/relevant coursework}

@@ -9,6 +9,11 @@ Resume Tips:
 
 -Underscore in FirstName_LastName_Resume.pdf instead of space helps prevent incompatibility processing the file. 
 
+-Add an interests section to separate you from other candidates and make you seem more like a future co-worker than just another applicant. https://www.reddit.com/r/jobs/comments/7y8k6p/im_an_exrecruiter_for_some_of_the_top_companies/
+
+-Font size for name 18 to 24 pt, heading 12 to 16 pt, and body 10 to 12. https://www.cnbc.com/2021/09/15/best-resume-fonts-you-cant-go-wrong-with-according-ceo-who-reads-thousands-of-resumes-a-year.html 
+
+-In the U.S and Canada, Letter Size paper (8.5 in x 11 in) is standard. While the rest of the world, A4 paper (210 mm x 297 mm) is standard,
 
 
 Change Log: 
@@ -17,16 +22,16 @@ Use CTRL + F to find exact code in file
 
 
 -Changed section color to blue (145a7d)
-File: resume.tex
 ---------------------
+File: resume.tex
 Code: Changed hex color.
 \definecolor{awesome}{HTML}{145a7d} 
 
 
 
 -Changed section color to fully covered instead of partially covered
-File: resume.tex
 ---------------------
+File: resume.tex
 Code: Added new code. 
 \makeatletter
 \def\@sectioncolor{\color{awesome}}
@@ -35,8 +40,8 @@ Code: Added new code.
 
 
 -Changed darktext, graytext, lightext, and text to fully black (000000) to make it easier to read
-File: resume.tex
 ---------------------
+File: resume.tex
 Code: Changed code.
 % Text types are in order except lighttext
  \definecolor{darktext}{HTML}{000000}
@@ -48,8 +53,8 @@ Code: Changed code.
 
  
 -Added link to footer
-File: resume.tex
 ---------------------
+File: resume.tex
 Code: Added new code. 
 \usepackage{hyperref}
 ---------------------
@@ -61,16 +66,25 @@ Code: Changed code.
 
 
 
+-Changed elements of entry
 -Changed font styles from slanted, italics, and small capitals to regular 
-File: awesome-cv.cls
+-Changed font \bodyfontlight to \bodyfont
 ---------------------
+File: awesome-cv.cls
 Code: Removed all \slshape, \itshape, and \scshape from code. 
+Code: Changed \bodyfontlight to \bodyfont
+% For elements of entry
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}} % Add \scshape after \bodyfont to make it small cap
+\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\color{graytext} #1}} % Add \slshape next to \bodyfontlight to make the word italics / italicize. Changed \bodyfontlight to \bodyfont
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{awesome} #1}} % Add \slshape next to \bodyfontlight to make the word italics / italicize. Changed \bodyfontlight to \bodyfont
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\upshape\color{text} #1}} % Changed \bodyfontlight to \bodyfont
 
 
 
 -Added ability to make bulleted columns
-File: resume.tex
 ---------------------
+File: resume.tex
 Code: Added code
 \usepackage{multicol}
 ---------------------
@@ -103,8 +117,8 @@ Code: Code template for making bulleted columns
 
 
 -Removed , after \honorpositionstyle{#1} from /cvhonor 
-File: awesome-cv.cls
 ---------------------
+File: awesome-cv.cls
 Code: Changed code
   \honordatestyle{#4} & \honorpositionstyle{#1} \honortitlestyle{#2} & \honorlocationstyle{#3} \\
 }
@@ -112,8 +126,8 @@ Code: Changed code
 
 
 -Changed margin
-File: resume.tex
 ---------------------
+File: resume.tex
 Code: Commented on code.
 %\vspace*{-4mm}
 %\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
@@ -124,8 +138,8 @@ Code: Added code.
 
 
 -Added package
-File: resume.tex
 ---------------------
+File: resume.tex
 Code: Added code
 \usepackage{comment}
 ---------------------
@@ -135,8 +149,8 @@ Code: Template code
 
 
 -Added another method for creating columns. Not necessary.
-File: resume.tex
 ---------------------
+File: resume.tex
 Code: Added code
 \usepackage{tasks}
 ---------------------
@@ -153,9 +167,9 @@ Code: Code template
 
 
 -Added new command called \cvdescription
-File: awesome-cv.cls
 ---------------------
-Coded: Changed code. 
+File: awesome-cv.cls
+Code: Changed code. 
 % Define an entry of cv information (modified to not include organization, title, location, and date)
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cvdescription}[5]{%
@@ -173,4 +187,238 @@ Coded: Changed code.
 
 
 
+-Added relevant coursework
+---------------------
+File:relevant coursework.tex
+Code: Added code
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Relevant Coursework}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+  \cvdescription
+    {} % Job title
+    {} % Organization
+    {} % Location
+    {} % Date(s)
+    {
+    \begin{cvitems} % Descriptions
+        \vspace*{-4.0mm} % Move text vertically up 4.0mm
+        \begin{multicols}{3} % Create two columns
+        % \addtolength{\itemindent}{0.0cm} indent before the bullet
+        % \item \hspace {} indent after the bullet
+        \item Artificial Intelligence
+        \item Data Structures and Algorithms
+        \item Linear Algebra
+        \item Introduction to Machine Learning
+        \item Computer Organization and Systems
+        \item Circuit and Electronics
+        \item Discrete Math
+        \item Design and Analysis of Algorithms
+        \item Introduction to Operating Systems
+        \end{multicols}
+    \end{cvitems}
+    }
+
+%---------------------------------------------------------
+\end{cventries}
+\vspace*{-4.0mm}
+
+
+
 -Added comments / code documentation
+File: awesome-cv.cls
+File: NOTES.txt
+File: resume.tex
+
+
+
+-Changed paper size and font size
+---------------------
+File: resume.tex
+Code: Commented code
+\documentclass[12pt, letterpaper]{awesome-cv} 
+Code : Added code
+%\documentclass[11pt, a4paper]{awesome-cv}
+
+
+
+-Changed font awesome and CV header
+---------------------
+File: resume.tex
+Code: Added code
+\usepackage{fontawesome5}
+---------------------
+File: resume.tex
+Code: Added code
+\mobile{(+82) 10-9030-1843}
+\email{posquit0.bj@gmail.com}
+\homepage{www.posquit0.com}
+%\addresstwo{address}
+\github{posquit0}
+\linkedin{posquit0}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%\citizenship{citizenship}
+
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+% \extrainfotwo{second extra information}
+---------------------
+File: awesome-cv.cls
+Code: Commented code
+%\RequirePackage{fontawesome}
+Code: Changed and added code
+      \ifthenelse{\isundefined{\@mobile}}%
+        {}%
+        {%
+          \faMobile*\acvHeaderIconSep\@mobile%
+          \setbool{isstart}{false}%
+        }%
+      \ifthenelse{\isundefined{\@email}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{mailto:\@email}{\faEnvelope[regular]\acvHeaderIconSep\@email}%
+        }%
+      \ifthenelse{\isundefined{\@homepage}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{http://\@homepage}{\faNetworkWired\acvHeaderIconSep\@homepage}%
+        }%
+      \ifthenelse{\isundefined{\@addresstwo}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          {\faHome\acvHeaderIconSep\@addresstwo}%
+        }%
+      \ifthenelse{\isundefined{\@github}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://github.com/\@github}{\faGithub\acvHeaderIconSep\@github}%
+        }%
+      \ifthenelse{\isundefined{\@gitlab}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
+        }%
+      \ifthenelse{\isundefined{\@stackoverflowid}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
+        }%
+      \ifthenelse{\isundefined{\@linkedin}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinIn\acvHeaderIconSep\@linkedin}%
+        }%
+      \ifthenelse{\isundefined{\@twitter}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+        }%
+      \ifthenelse{\isundefined{\@skype}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \faSkype\acvHeaderIconSep\@skype%
+        }%
+      \ifthenelse{\isundefined{\@reddit}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
+        }%
+      \ifthenelse{\isundefined{\@xing}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
+        }%
+      \ifthenelse{\isundefined{\@medium}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
+        }%
+      \ifthenelse{\isundefined{\@googlescholarid}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://scholar.google.com/citations?user=\@googlescholarid}{\faGraduationCap\acvHeaderIconSep\@googlescholarname}%
+        }%
+      \ifthenelse{\isundefined{\@citizenship}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          {\faIdCard[regular]\acvHeaderIconSep\@citizenship}%
+        }%
+      \ifthenelse{\isundefined{\@extrainfo}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \@extrainfo%
+        }%
+      \ifthenelse{\isundefined{\@extrainfotwo}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \@extrainfotwo%
+        }%
+---------------------
+File: awesome-cv.cls
+Code: Added code
+% Define writer's address
+% Usage: \address{<address>}
+\newcommand*{\address}[1]{\def\@address{#1}}
+
+% Define writer's position
+% Usage: \position{<position>}
+\newcommand*{\position}[1]{\def\@position{#1}}
+
+% Defines writer's mobile (optional)
+% Usage: \mobile{<mobile number>}
+\newcommand*{\mobile}[1]{\def\@mobile{#1}}
+
+% Defines writer's citizenship (optional)
+% Usage: \ID-card{<ID-card>}
+\newcommand*{\citizenship}[1]{\def\@citizenship{#1}}
+
+% Defines writer's email (optional)
+% Usage: \email{<email address>}
+\newcommand*{\email}[1]{\def\@email{#1}}
+
+% Defines writer's homepage (optional)
+% Usage: \homepage{<url>}
+\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+
+% Defines writer's address (optional)
+% Usage: \address {<address>}
+\newcommand*{\addresstwo}[1]{\def\@addresstwo{#1}}
+
+% Defines writer's github (optional)
+% Usage: \github{<github-nick>}
+\newcommand*{\github}[1]{\def\@github{#1}}
+
+% Defines writer's gitlab (optional)
+% Usage: \gitlab{<gitlab-nick>}
+\newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
