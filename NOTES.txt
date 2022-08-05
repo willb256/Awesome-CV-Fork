@@ -422,3 +422,11 @@ Code: Added code
 % Defines writer's gitlab (optional)
 % Usage: \gitlab{<gitlab-nick>}
 \newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
+
+
+
+-Changed sourcesansprolight to sourcesanspro
+---------------------
+File: awesome-cv.cls
+Code: Changed code
+\newcommand*{\bodyfontlight}{\sourcesanspro}
