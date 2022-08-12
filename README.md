@@ -27,7 +27,11 @@ Instruction:
 
 7. Change the compiler to XeLaTeX
 
-8. Press recompile on the right side
+8. Change the main document to resume.tex
+
+9. Exit out of the menu by pressing in the middle of the screen. 
+
+10. Press on resume.tex in the left hand panel. Then, press on recompile on the right side
 
 
 Disclaimer: The person in this resume is not me. But rather, the original creator of Awesome CV. Some content has also been modified.
