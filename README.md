@@ -1,4 +1,4 @@
-My personal LaTeX template using Awesome CV template 
+My personal LaTeX template made using Awesome CV
 
 https://www.overleaf.com/read/dmpwdjzqddwd
 
